@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PenaKita - Toko Alat Tulis Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">✏️ Pena<span>Kita</span></div>
+        <div class="nav-actions">
+            <span id="userGreeting" class="user-greeting"></span>
+            <button id="authBtn" class="btn btn-outline">Login</button>
+            <button id="cartBtn" class="btn btn-primary">
+                🛒 Keranjang (<span id="cartCount">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Lengkapi Kebutuhan Sekolah & Kantormu</h1>
+        <p>Alat tulis berkualitas dengan harga bersahabat. Pilih barangnya, masukkan keranjang, dan checkout sekarang!</p>
+    </section>
+
+    <!-- Daftar Produk -->
+    <main class="container">
+        <div class="section-header">
+            <h2>Katalog Alat Tulis</h2>
+            <input type="text" id="searchInput" placeholder="Cari pulpen, buku, penghapus...">
+        </div>
+        <div id="productList" class="product-grid">
+            <!-- Produk dirender otomatis oleh JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Masuk ke Akun</h2>
+            <p class="modal-subtitle">Silakan login untuk melanjutkan pembelian.</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Contoh: budi123" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Minimal 4 karakter" required minlength="4">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Keranjang Belanja -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content modal-lg">
+            <span class="close-btn" onclick="closeModal('cartModal')">&times;</span>
+            <h2>🛒 Keranjang Belanja</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Item keranjang dirender oleh JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>Total Harga:</span>
+                    <strong id="cartTotal">Rp 0</strong>
+                </div>
+                <button id="checkoutBtn" class="btn btn-success btn-block">Beli Sekarang (Checkout)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Struk / Berhasil Beli -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('receiptModal')">&times;</span>
+            <h2>✅ Pembelian Berhasil!</h2>
+            <div id="receiptDetails" class="receipt-box"></div>
+            <button class="btn btn-primary btn-block" onclick="closeModal('receiptModal')">Tutup</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
